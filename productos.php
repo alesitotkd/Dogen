@@ -28,56 +28,56 @@ include "elementos/cabecera.php";
             <div class="MultiCarousel-inner">
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 100%; height: 100%" src="./img/productos/alimentacion/alimentacion1.jpg" alt="">
-                        <p class="lead">29,13€</p>
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion1.jpg" alt="">
+                        <p class="lead">34,33€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 70%; height: 70%" src="./img/productos/alimentacion/alimentacion2.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion2.jpg" alt="">
                         <p class="lead">12,34€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 50%; height: 50%" src="./img/productos/alimentacion/alimentacion3.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion3.jpg" alt="">
                         <p class="lead">19,57€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 90%; height: 90%" src="./img/productos/alimentacion/alimentacion4.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion4.jpg" alt="">
                         <p class="lead">9,21€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 65%; height: 65%" src="./img/productos/alimentacion/alimentacion5.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion5.jpg" alt="">
                         <p class="lead">8,07€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 47%; height: 47%" src="./img/productos/alimentacion/alimentacion6.jpg" alt="">
-                        <p class="lead">12,59€</p>
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion6.jpg" alt="">
+                        <p class="lead">29,59€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 75%; height: 75%" src="./img/productos/alimentacion/alimentacion7.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion7.jpg" alt="">
                         <p class="lead">11,40€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 65%; height: 65%" src="./img/productos/alimentacion/alimentacion8.jpg" alt="">
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion8.jpg" alt="">
                         <p class="lead">17,91€</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="pad15">
-                        <img style="width: 45%; height: 45%" src="./img/productos/alimentacion/alimentacion9.jpg" alt="">
-                        <p class="lead">3,99€</p>
+                        <img style="width: 120px; height: 120px" src="./img/productos/alimentacion/alimentacion9.jpg" alt="">
+                        <p class="lead">31,99€</p>
                     </div>
                 </div>
             </div>

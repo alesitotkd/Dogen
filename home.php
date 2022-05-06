@@ -49,7 +49,7 @@ include "elementos/cabecera.php";
                         <img src="./img/dogen/productos.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
                             <h5 class="card-title mb-0">Productos</h5>
-                            <div class="card-text text-black-50">El cuidado que necesita tu amigo</div>
+                            <div class="card-text text-black-50">El cuidado que necesita</div>
                         </div>
                     </a>
                 </div>
@@ -69,21 +69,27 @@ include "elementos/cabecera.php";
             <!-- Personal -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img src="./img/dogen/personal.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title mb-0">Personal</h5>
-                        <div class="card-text text-black-50">Trata como te gustaría ser tratado</div>
-                    </div>
+                    <a href="personal">
+                        <a onclick="alertaPersonal()">
+                            <img src="./img/dogen/personal.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-0">Personal</h5>
+                                <div class="card-text text-black-50">Dale el mejor trato</div>
+                            </div>
+                        </a>
+                    </a>
                 </div>
             </div>
             <!-- Colaboradores -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <img src="./img/dogen/colaboradores.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title mb-0">Colaboradores</h5>
-                        <div class="card-text text-black-50">Protectoras y asociaciones</div>
-                    </div>
+                    <a onclick="alertaColaboradores()">
+                        <img src="./img/dogen/colaboradores.jpg" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-0">Colaboradores</h5>
+                            <div class="card-text text-black-50">Protectoras y asociaciones</div>
+                        </div>
+                    </a>
                 </div>
             </div>
     </div>
@@ -148,7 +154,7 @@ include "elementos/cabecera.php";
                             </ul>
                             <div class="d-grid">
                                 <a href="tel:+123456789" class="btn btn-primary text-uppercase"
-                                   style="background-color: #240463; border: #240463">llámanos</a>
+                                   style="background-color: #240463; border: #240463" onclick="alertaLlamada()">llámanos</a>
                             </div>
                         </div>
                     </div>
@@ -157,13 +163,33 @@ include "elementos/cabecera.php";
         </div>
     </section>
     <!----------------------------------- PRICE END ------------------------------------->
+    <!----------------------------------- CONTACT START ------------------------------------->
     <hr>
-        <iframe  width="100%" height="300px" frameborder="0" scrolling="no" marginheight="0"
-                 marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;
-                        hl=es&amp;q=Talavera%20de%20la%20Reina+(Mi%20nombre%20de%20egocios)&amp;
-                        t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-        </iframe>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-3" id="form_container">
+            <iframe  width="100%" height="350px" frameborder="0" scrolling="no" marginheight="0"
+                     marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;
+                    hl=es&amp;q=Talavera%20de%20la%20Reina+(Mi%20nombre%20de%20egocios)&amp;
+                    t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
+        </div>
+        <div class="col-md-2 col-md-offset-3" id="form_container" style="margin-top: 40px">
+            <center>
+                <div class="col-md-6" style="margin-bottom: 20px">
+                    <a href="mailto:some@email.com" target="_blank">
+                        <img src="./img/dogen/correo.png" width="120px" height="120">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="https://wa.me/637023488" target="_blank">
+                        <img src="./img/dogen/whatsapp.png" width="120px" height="120px">
+                    </a>
+                </div>
+            </center>
+        </div>
+    </div>
 </section>
+<!----------------------------------- CONTACT END ------------------------------------->
 <!----------------------------------- FOOTER START ------------------------------------->
 <?php
 include "elementos/footer.html";

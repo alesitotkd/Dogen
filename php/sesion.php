@@ -1,5 +1,8 @@
-<?php
+<!-- ========================= JS ALERTS ========================= -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 
+<?php
+session_start();
 
 // Incluimos el archivo de conexión
 include '../funciones/conectar.php';
@@ -22,23 +25,81 @@ if (isset($_POST["validar_login"])){
             $hashbd=$fila['CONTRA'];
 
             if (password_verify($contra,$hashbd)==true){
-                $usuario_mayus=strtoupper($fila["nombre"]);
+                $usuario_mayus=strtoupper($fila["NOMBRE"]);
+                $_SESSION['id']=$fila["ID_USUARIO"];
+                $_SESSION['usuario']=$fila["NICKNAME"];
+                $_SESSION['mail']=$fila["MAIL"];
                 $conexion->close();
-                    echo "<script> alert('BIENVENIDO, $usuario_mayus');window.location= '../home' </script>";
+                echo '<script>
+                        jQuery(function(){   
+                           swal({
+                                 title: "BIENVENIDO",
+                                 type: "success",
+                                 showConfirmButton: false,
+                                 timer: 1500,
+                            }, 
+                            function(){
+                                 window.location.href = "../home";
+                            })
+                        });
+                        </script>';
             }else{
                 $conexion->close();
-                echo "<script> alert('USUARIO O CONTRASEÑA INCORRECTA');window.location= '../index' </script>";
+                echo '<script>
+                        jQuery(function(){   
+                           swal({
+                                 title: "ERROR",
+                                 text: "Usuario o contraseña incorrectos",
+                                 type: "error",
+                                 showConfirmButton: false,
+                                 timer: 2500,
+                            }, 
+                            function(){
+                                 window.location.href = "../index";
+                            })
+                        });
+                        </script>';
 
             }
 
         }else{
             $conexion->close();
-            echo "<script> alert('USUARIO O CONTRASEÑA INCORRECTA');window.location= '../index' </script>";
+            echo '<script>
+                        jQuery(function(){   
+                           swal({
+                                 title: "ERROR",
+                                 text: "Usuario o contraseña incorrectos",
+                                 type: "error",
+                                 showConfirmButton: false,
+                                 timer: 2500,
+                            }, 
+                            function(){
+                                 window.location.href = "../index";
+                            })
+                        });
+                        </script>';
         }
 
     }else {
         $conexion->close();
-        echo "<script> alert('USUARIO O CONTRASEÑA INCORRECTA');window.location= '../index' </script>";
+        echo '<script>
+                        jQuery(function(){   
+                           swal({
+                                 title: "ERROR",
+                                 text: "Usuario o contraseña incorrectos",
+                                 type: "error",
+                                 showConfirmButton: false,
+                                 timer: 2500,
+                            }, 
+                            function(){
+                                 window.location.href = "../";
+                            })
+                        });
+                        </script>';
     }
 }
 ?>
+<!-- ========================= JS ALERTS========================= -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">

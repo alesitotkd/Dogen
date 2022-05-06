@@ -1,3 +1,5 @@
+<?php session_start() ?>
+<?php if(isset($_SESSION['usuario'])): ?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -18,6 +20,10 @@
     <link rel="stylesheet" href="./css/precios.css" />
     <link rel="stylesheet" href="./css/hover.css" />
     <link rel="stylesheet" href="./css/productos.css" />
+
+    <!-- ========================= JS ALERTS ========================= -->
+    <script src="./js/alertasPersonalizadas.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 
 <body>
@@ -43,7 +49,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                             </svg>
-                            <a href="mailto:info@yourwebsite.com">Usuario</a>
+                            <a href="cuenta"><?php echo $_SESSION['usuario']?></a>
                         </p>
                         <p>|&nbsp&nbsp</p>
                         <p>
@@ -110,7 +116,7 @@
             <div class="col-lg-12">
                 <div class="nav-inner">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="home">
                             <img src="./img/dogen/logo.PNG" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -129,7 +135,7 @@
                                     <a class="page-scroll" href="productos">Productos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="javascript:void(0)">Mascotas</a>
+                                    <a class="page-scroll" href="mascotas">Mascotas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="javascript:void(0)"
@@ -137,8 +143,8 @@
                                        aria-controls="navbarSupportedContent" aria-expanded="false"
                                        aria-label="Toggle navigation">Personal</a>
                                     <ul class="sub-menu collapse" id="submenu-1-1">
-                                        <li class="nav-item"><a href="about-us.html">Cuidadores</a></li>
-                                        <li class="nav-item"><a href="about-us.html">Adiestradores</a></li>
+                                        <li class="nav-item"><a href="cuidadores">Cuidadores</a></li>
+                                        <li class="nav-item"><a href="adiestradores">Adiestradores</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -147,8 +153,8 @@
                                        aria-controls="navbarSupportedContent" aria-expanded="false"
                                        aria-label="Toggle navigation">Colaboradores</a>
                                     <ul class="sub-menu collapse" id="submenu-1-1">
-                                        <li class="nav-item"><a href="about-us.html">Protectoras</a></li>
-                                        <li class="nav-item"><a href="about-us.html">Asociaciones</a></li>
+                                        <li class="nav-item"><a href="protectoras">Protectoras</a></li>
+                                        <li class="nav-item"><a href="asociaciones">Asociaciones</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -157,8 +163,8 @@
                                        aria-controls="navbarSupportedContent" aria-expanded="false"
                                        aria-label="Toggle navigation">Pérfil</a>
                                     <ul class="sub-menu collapse" id="submenu-1-1">
-                                        <li class="nav-item"><a href="about-us.html">Cuenta</a></li>
-                                        <li class="nav-item"><a href="about-us.html">Cerrar Sesión</a></li>
+                                        <li class="nav-item"><a href="cuenta">Cuenta</a></li>
+                                        <li class="nav-item"><a href="./php/cerrarSesion">Cerrar Sesión</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -170,7 +176,8 @@
     </div> <!-- container -->
 
 </header>
-
+<?php else: ?>
+    <script>   location.href = "./index";   </script>
+<?php endif; ?>
 <!-- ========================= header end ========================= -->
-<!-- ========================= JS ========================= -->
 
