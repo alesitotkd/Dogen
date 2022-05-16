@@ -29,3 +29,65 @@ function infoUsuario($id){
 }
 
 //------------------------------------------------------------------------------------------------------
+
+// Modificar datos de usuario
+
+function modificarUsuario($id, $nombre,$apellido1,$apellido2,$mail, $nickname) {
+
+    $con = conectar();
+    if (!$con)
+        return null;
+    else {
+        $sql = "UPDATE usuarios SET nombre='$nombre', apellido1='$apellido1', apellido2='$apellido2', mail='$mail', 
+                    nickname='$nickname' WHERE id_usuario='$id'";
+        if (mysqli_query($con, $sql)) {
+            return true;
+        } else {
+            return false;
+        }
+        mysqli_close($con);
+    }
+
+}
+
+//------------------------------------------------------------------------------------------------------
+
+// Modificar contraseña de usuario
+
+function modificarContraUsuario($id, $contra)
+{
+
+    $con = conectar();
+    if (!$con) {
+        return null;
+    } else {
+        $sql = "UPDATE usuarios SET contra='$contra' WHERE id_usuario='$id'";
+        if (mysqli_query($con, $sql)) {
+            return true;
+        } else {
+            return false;
+        }
+        mysqli_close($con);
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+
+// Eliminar usuario
+
+function eliminarUsuario($id)
+{
+
+    $con = conectar();
+    if (!$con) {
+        return null;
+    } else {
+        $sql = "DELETE from usuarios WHERE id_usuario='$id'";
+        if (mysqli_query($con, $sql)) {
+            return true;
+        } else {
+            return false;
+        }
+        mysqli_close($con);
+    }
+}

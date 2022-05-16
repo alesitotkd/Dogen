@@ -112,7 +112,7 @@ include "elementos/cabecera.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Datos de contacto</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="#" class="btn btn-primary text-uppercase"
+                                <a href="mascotasInsertar" class="btn btn-primary text-uppercase"
                                    style="background-color: #240463; border: #240463">Anunciar mascota</a>
                             </div>
                         </div>
