@@ -57,10 +57,10 @@ include "elementos/cabecera.php";
             <!-- Mascotas -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-0 shadow">
-                    <a href="mascotas">
+                    <a href="adopciones">
                         <img src="./img/dogen/adopta.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
-                            <h5 class="card-title mb-0">Mascotas</h5>
+                            <h5 class="card-title mb-0">Adopciones</h5>
                             <div class="card-text text-black-50">No compres, adopta</div>
                         </div>
                     </a>
@@ -112,7 +112,7 @@ include "elementos/cabecera.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Datos de contacto</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="mascotasInsertar" class="btn btn-primary text-uppercase"
+                                <a href="adopcionesInsertar" class="btn btn-primary text-uppercase"
                                    style="background-color: #240463; border: #240463">Anunciar mascota</a>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ include "elementos/cabecera.php";
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Tarifa del anunciante</li>
                             </ul>
                             <div class="d-grid">
-                                <a href="#" class="btn btn-primary text-uppercase"
+                                <a href="personalInsertar" class="btn btn-primary text-uppercase"
                                    style="background-color: #240463; border: #240463">Anunciarme</a>
                             </div>
                         </div>

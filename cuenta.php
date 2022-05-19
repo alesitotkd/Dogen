@@ -11,7 +11,7 @@ include "elementos/cabecera.php";
                 <!----------------------------------- USUARIO START ------------------------------------->
                             <div class="mt-3">
                                 <?php
-                                    include "funciones/funcionesUsuario.php";
+                                    include "funciones/funcionesCuenta.php";
                                     $resultado=infoUsuario($_SESSION['id']);
                                     $total = mysqli_num_rows($resultado);
 
@@ -35,9 +35,262 @@ include "elementos/cabecera.php";
                                                  });
                                             </script>';
                                     }
+
+
                                 ?>
                                 <h4><?php echo $fila['nombre']?></h4>
                                 <p class="text-secondary mb-1"><?php echo $fila['nickname']?></p>
+
+                                <!----------------------------------- ELIMINAR USUARIO START ------------------------------------->
+                                <form action="cuenta" method="post">
+                                    <div class="row">
+                                        <input style="width: 100%" type="submit" name="Eliminar" class="btn btn-danger px-4" value="Eliminar cuenta">
+                                    </div>
+                                    <?php
+                                    if (isset($_POST['Eliminar'])){
+                                        $eliminacion = eliminarUsuario($_SESSION['id']);
+
+                                        if ($eliminacion == true) {
+                                            echo '<script>
+                                        jQuery(function(){   
+                                           swal({
+                                                 title: "CUENTA DE USUARIO BORRADA CORRECTAMENTE",
+                                                 type: "success",
+                                                 showConfirmButton: false,
+                                                 timer: 1500,
+                                            }, 
+                                            function(){
+                                                 window.location.href = "./";
+                                            })
+                                        });
+                                        </script>';
+                                        } else {
+                                            echo '<script>
+                                        jQuery(function(){   
+                                           swal({
+                                                 title: "ERROR AL BORRAR CUENTA DE USUARIO",
+                                                 type: "error",
+                                                 showConfirmButton: false,
+                                                 timer: 1500,
+                                            }, 
+                                            function(){
+                                                 window.location.href = "cuenta";
+                                            })
+                                        });
+                                        </script>';
+                                        }
+
+                                    }
+                                    ?>
+                                </form>
+                                <!----------------------------------- ELIMINAR USUARIO END ------------------------------------->
+                                <!----------------------------------- MASCOTAS USUARIO START ------------------------------------->
+                                <p class="text-secondary mb-1" style="margin-top: 35px"><u>MIS MASCOTAS</u></p>
+                                <?php
+                                $mascotas=mascotasUsuario($_SESSION['id']);
+                                $total_mascotas = mysqli_num_rows($mascotas);
+
+                                if ($total_mascotas != null){
+                                    echo '
+                                            <table class="table table-sm table-responsive" style="margin-top: 10px">
+                                            <tbody>';
+                                    while ($linea = $mascotas->fetch_assoc()) {
+
+                                ?>
+                                                <tr>
+                                                    <th scope="row" style="color: #269825"><?php echo $linea['NOMBRE'] ?></th>
+                                                    <td>
+                                                        <form action="cuenta" method="post">
+                                                            <input type="hidden" value='<?php echo $linea['RUTA_IMG']?>' name="imgMascota" >
+                                                            <button class="btn btn-danger px-1" type="submit" name="eliminarMascota" value='<?php echo $linea['ID_MASCOTA']?>' >Eliminar</button>
+                                                            <?php
+                                                            if (isset($_POST['eliminarMascota'])){
+                                                                $borrado=borrarMascota($_POST['eliminarMascota']);
+                                                                if ($borrado==0){
+                                                                    echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "ERROR AL ELIMINAR MASCOTA",
+                                                                                     type: "error",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                                }
+                                                                if ($borrado==1){
+                                                                    unlink($_POST['imgMascota']);
+                                                                    echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "MASCOTA ELIMINADA CORRECTAMENTE",
+                                                                                     type: "success",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                                }
+                                                            }
+                                                            ?>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+
+
+                                <?php
+                                    }
+                                    echo '
+                                         </table>
+                                          </tbody>';
+                                }
+
+                                ?>
+                                <!----------------------------------- MASCOTAS USUARIO END ------------------------------------->
+                                <!----------------------------------- CUIDADORES USUARIO START ------------------------------------->
+                                <p class="text-secondary mb-1" style="margin-top: 35px"><u>CUIDADORES</u></p>
+                                <?php
+                                $cuidadores=cuidadorUsuario($_SESSION['id']);
+                                $total_cuidadores = mysqli_num_rows($cuidadores);
+
+                                if ($total_cuidadores != null){
+                                    echo '
+                                            <table class="table table-sm table-responsive" style="margin-top: 10px">
+                                            <tbody>';
+                                    while ($linea = $cuidadores->fetch_assoc()) {
+
+                                        ?>
+                                        <tr>
+                                            <th scope="row" style="color: #269825"><?php echo $linea['NOMBRE'] ?></th>
+                                            <td>
+                                                <form action="cuenta" method="post">
+                                                    <input type="hidden" value='<?php echo $linea['RUTA_IMG']?>' name="imgCuidador" >
+                                                    <button class="btn btn-danger px-1" type="submit" name="eliminarCuidador" value='<?php echo $linea['ID_PERSONAL']?>' >Eliminar</button>
+                                                    <?php
+                                                    if (isset($_POST['eliminarCuidador'])){
+                                                        $borrado=borrarCuidador($_POST['eliminarCuidador']);
+                                                        if ($borrado==0){
+                                                            echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "ERROR AL ELIMINAR CUIDADOR",
+                                                                                     type: "error",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                        }
+                                                        if ($borrado==1){
+                                                            unlink($_POST['imgCuidador']);
+                                                            echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "CUIDADOR ELIMINADO CORRECTAMENTE",
+                                                                                     type: "success",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+
+                                        <?php
+                                    }
+                                    echo '
+                                         </table>
+                                          </tbody>';
+                                }
+
+                                ?>
+                                <!----------------------------------- CUIDADORES USUARIO END ------------------------------------->
+                                <!----------------------------------- ADIESTRADOR USUARIO START ------------------------------------->
+                                <p class="text-secondary mb-1" style="margin-top: 35px"><u>ADIESTRADORES</u></p>
+                                <?php
+                                $adiestradores=adiestradorUsuario($_SESSION['id']);
+                                $total_adiestradores = mysqli_num_rows($adiestradores);
+
+                                if ($total_adiestradores != null){
+                                    echo '
+                                            <table class="table table-sm table-responsive" style="margin-top: 10px">
+                                            <tbody>';
+                                    while ($linea = $adiestradores->fetch_assoc()) {
+
+                                        ?>
+                                        <tr>
+                                            <th scope="row" style="color: #269825"><?php echo $linea['NOMBRE'] ?></th>
+                                            <td>
+                                                <form action="cuenta" method="post">
+                                                    <input type="hidden" value='<?php echo $linea['RUTA_IMG']?>' name="imgAdiestrador" >
+                                                    <button class="btn btn-danger px-1" type="submit" name="eliminarAdiestrador" value='<?php echo $linea['ID_PERSONAL']?>' >Eliminar</button>
+                                                    <?php
+                                                    if (isset($_POST['eliminarAdiestrador'])){
+                                                        $borrado=borrarAdiestrador($_POST['eliminarAdiestrador']);
+                                                        if ($borrado==0){
+                                                            echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "ERROR AL ELIMINAR ADIESTRADOR",
+                                                                                     type: "error",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                        }
+                                                        if ($borrado==1){
+                                                            unlink($_POST['imgAdiestrador']);
+                                                            echo '<script>
+                                                                            jQuery(function(){   
+                                                                               swal({
+                                                                                     title: "ADIESTRADOR ELIMINADO CORRECTAMENTE",
+                                                                                     type: "success",
+                                                                                     showConfirmButton: false,
+                                                                                     timer: 1500,
+                                                                                }, 
+                                                                                function(){
+                                                                                     window.location.href = "cuenta";
+                                                                                })
+                                                                            });
+                                                                            </script>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+
+                                        <?php
+                                    }
+                                    echo '
+                                         </table>
+                                          </tbody>';
+                                }
+
+                                ?>
+                                <!----------------------------------- ADIESTRADOR USUARIO END ------------------------------------->
                             </div>
                         </div>
                     </div>
@@ -49,6 +302,7 @@ include "elementos/cabecera.php";
                 <div class="card">
                     <div class="card-body">
                         <form action="cuenta" method="post">
+                            <p class="text-secondary mb-1" style="margin-top: 20px "><u>DATOS PERSONALES</u></p><br>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Nombre</h6>
@@ -153,6 +407,7 @@ include "elementos/cabecera.php";
                         <!----------------------------------- DATOS USUARIO END ------------------------------------->
                         <!----------------------------------- CONTRA USUARIO START ------------------------------------->
                         <form action="cuenta" method="post">
+                            <p class="text-secondary mb-1" style="margin-top: 20px"><u>CAMBIAR CONTRASEÑA</u></p><br>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Contraseña</h6>
@@ -231,53 +486,7 @@ include "elementos/cabecera.php";
                             ?>
                         </form>
                         <!----------------------------------- CONTRA USUARIO END ------------------------------------->
-                        <!----------------------------------- ELIMINAR USUARIO START ------------------------------------->
                         <br><hr><br>
-                        <form action="cuenta" method="post">
-                            <div class="row">
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-9 text-secondary">
-                                    <input style="width: 100%" type="submit" name="Eliminar" class="btn btn-danger px-4" value="Eliminar cuenta">
-                                </div>
-                            </div>
-                            <?php
-                            if (isset($_POST['Eliminar'])){
-                                $eliminacion = eliminarUsuario($_SESSION['id']);
-
-                                if ($eliminacion == true) {
-                                    echo '<script>
-                                        jQuery(function(){   
-                                           swal({
-                                                 title: "CUENTA DE USUARIO BORRADA CORRECTAMENTE",
-                                                 type: "success",
-                                                 showConfirmButton: false,
-                                                 timer: 1500,
-                                            }, 
-                                            function(){
-                                                 window.location.href = "./";
-                                            })
-                                        });
-                                        </script>';
-                                } else {
-                                    echo '<script>
-                                        jQuery(function(){   
-                                           swal({
-                                                 title: "ERROR AL BORRAR CUENTA DE USUARIO",
-                                                 type: "error",
-                                                 showConfirmButton: false,
-                                                 timer: 1500,
-                                            }, 
-                                            function(){
-                                                 window.location.href = "cuenta";
-                                            })
-                                        });
-                                        </script>';
-                                }
-
-                            }
-                            ?>
-                        </form>
-                        <!----------------------------------- ELIMINAR USUARIO END ------------------------------------->
                     </div>
                 </div>
             </div>

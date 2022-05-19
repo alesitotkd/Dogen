@@ -27,15 +27,15 @@
 </head>
 
 <body>
-<!-- Preloader -->
-<div class="preloader">
+<!-- Preloader-->
+<!--<div class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
             <span></span>
             <span></span>
         </div>
     </div>
-</div>
+</div>-->
 <!-- /End Preloader -->
 <!-- ========================= header start ========================= -->
 <header class="header navbar-area">
@@ -135,7 +135,7 @@
                                     <a class="page-scroll" href="productos">Productos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="page-scroll" href="mascotas">Mascotas</a>
+                                    <a class="page-scroll" href="adopciones">Adopciones</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="page-scroll dd-menu collapsed" href="javascript:void(0)"

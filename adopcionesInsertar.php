@@ -1,7 +1,7 @@
 <?php
 include "elementos/cabecera.php";
 ?>
-<form action="mascotasInsertar" enctype="multipart/form-data" method="post">
+<form action="adopcionesInsertar" enctype="multipart/form-data" method="post">
 <div class="container" style="margin-top: 30px" id="app">
     <hr>
         <h5 class="card-title text-muted text-uppercase text-center">ADOPCIONES</h5>
@@ -29,7 +29,7 @@ include "elementos/cabecera.php";
             <h6 class="mb-0">Teléfono de contacto</h6>
         </div>
         <div class="col-sm-9 text-secondary">
-            <input type="number" v-model="telefono_contacto" class="form-control" name="telefono_contacto" value="" required >
+            <input type="number" v-model="telefono_contacto" class="form-control" name="telefono_contacto" maxlength="9" value="" required >
         </div>
     </div>
     <div class="row mb-3">
@@ -72,7 +72,7 @@ include "elementos/cabecera.php";
             <h6 class="mb-0">Fecha de nacimiento (Opcional)</h6>
         </div>
         <div class="col-sm-9 text-secondary">
-            <input type="date" v-model="fecha_nacimiento" class="form-control" name="fecha_nacimiento" value="">
+            <input type="date" v-model="fecha_nacimiento" class="form-control" name="fecha_nacimiento" value="" required>
         </div>
     </div>
     <div class="row mb-3">
@@ -169,14 +169,14 @@ include "elementos/cabecera.php";
                 <div class="col-xl-4 col-md-4 mb-3"><b>Nombre:</b> {{ nombre }}</div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-md-4 mb-3"><b>Edad:</b> {{ edad }}</div>
+                <div class="col-xl-4 col-md-4 mb-3"><b>Edad:</b> {{ edad }} Años</div>
                 <div class="col-xl-4 col-md-4 mb-3"><b>Raza:</b> {{ raza }}</div>
                 <div class="col-xl-4 col-md-4 mb-3"><b>Sexo:</b> {{ sexo }}</div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-md-4 mb-3"><b>Fecha de nacimiento</b> {{ fecha_nacimiento }}</div>
+                <div class="col-xl-4 col-md-4 mb-3"><b>Fecha de nacimiento:</b> {{ fecha_nacimiento }}</div>
                 <div class="col-xl-4 col-md-4 mb-3"><b>Vacunacion:</b> {{ vacunacion }}</div>
-                <div class="col-xl-4 col-md-4 mb-3"><b>Peso:</b> {{ peso }}</div>
+                <div class="col-xl-4 col-md-4 mb-3"><b>Peso:</b> {{ peso }} Kg</div>
             </div>
             <div class="row">
                 <div class="col-xl-4 col-md-4 mb-3"><b>Tamaño:</b> {{ tamanio }}</div>
@@ -192,7 +192,7 @@ include "elementos/cabecera.php";
             </div>
             <div class="row justify-content-center" style="margin-top: 20px">
                 <img id="img1" class="col-xl-6 col-md-4 mb-3" style="width: 35%; height: 35%">
-                <input style="background-color:  #269825;; border-color:  #269825; width: 100%" type="submit" name="publicar" class="btn btn-primary px-4" value="Confirmar y publicar macota">
+                <input style="background-color:  #269825;; border-color:  #269825; width: 100%" type="submit" name="publicar" class="btn btn-primary px-4" value="Confirmar y publicar">
             </div>
         </div>
     </div>
@@ -226,6 +226,7 @@ include "elementos/cabecera.php";
                 $directorio = $_SERVER['DOCUMENT_ROOT'].'/PROYECTO_FINAL/'.$path;
                 // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
                 move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.'/'.$nombre_img);
+                $rutaImg= $path.'/'.$nombre_img;
             }
             else
             {
@@ -239,7 +240,7 @@ include "elementos/cabecera.php";
                                  timer: 3500,
                             }, 
                             function(){
-                                 window.location.href = "mascotasInsertar";
+                                 location.reload();
                             })
                          });
                     </script>';
@@ -249,7 +250,7 @@ include "elementos/cabecera.php";
             $insercion=insertarMascota($_SESSION['id'],$_POST['mail_contacto'],$_POST['telefono_contacto'],$_POST['nombre'],
                 $_POST['edad'],$_POST['raza'],$_POST['sexo'],$_POST['fecha_nacimiento'],$_POST['vacunacion'],
                 $_POST['peso'],$_POST['tamanio'],$_POST['direccion'], $_POST['chip'],$_POST['nivel_actividad'],
-                $_POST['desparasitacion'],$_POST['descripcion']);
+                $_POST['desparasitacion'],$_POST['descripcion'],$rutaImg);
 
             if ($insercion==true){
                 echo '<script>
@@ -258,10 +259,10 @@ include "elementos/cabecera.php";
                                  title: "MASCOTA PUBLICADA CORRECTAMENTE",
                                  type: "success",
                                  showConfirmButton: false,
-                                 timer: 1500,
+                                 timer: 2000,
                             }, 
                             function(){
-                                 window.location.href = "mascotas";
+                                 window.location.href = "adopciones";
                             })
                         });
                         </script>';
@@ -288,10 +289,10 @@ include "elementos/cabecera.php";
                              text: "COMPLETE LOS CAMPOS NECESARIOS",
                              type: "error",
                              showConfirmButton: false,
-                             timer: 1500,
+                             timer: 2000,
                         }, 
                         function(){
-                             window.location.href = "mascotasInsertar";
+                             location.reload();
                         })
                      });
                 </script>';
