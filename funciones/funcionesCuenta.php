@@ -253,3 +253,109 @@ function borrarAdiestrador($id) {
     }
 
 }
+
+//------------------------------------------------------------------------------------------------------
+// PROTECTORAS ANUNCIOS USUARIO
+
+function protectorasUsuario($id)
+{
+
+    $sql="select * from colaboradores where id_usuario_admin='$id' and tipo='Protectora'";
+    $con=conectar(); //abrimos la conexión
+
+    if ($con==null){
+        echo "Error al conectar con la bd";
+        return null;
+    }
+    else{
+        $con->set_charset("utf8");
+        $resultado=$con->query($sql);
+        if ($resultado!=null){
+            $con->close();
+            return $resultado;
+        }
+        else{
+            echo "No se ha ejecutado la consulta";
+            $con->close();
+        }
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+
+// PROTECTORA BORRAR
+function borrarProtectora($id) {
+    $consulta = "delete from colaboradores where id_colaborador = '$id'";
+    $mensaje = null;
+    $con = conectar();
+    if ($con == null) {
+        return 0;
+    } else {
+        $resultado = $con->query($consulta);
+
+        if ($resultado) {
+            if ($con->affected_rows == 1)
+                return 1; // se borra
+            else
+                return -1; // no se borra
+        } else {
+            if ($con->errno == 1451) {
+                return -2;
+            }
+        }
+    }
+
+}
+
+//------------------------------------------------------------------------------------------------------
+// PERRERAS ANUNCIOS USUARIO
+
+function perrerasUsuario($id)
+{
+
+    $sql="select * from colaboradores where id_usuario_admin='$id' and tipo='Perrera'";
+    $con=conectar(); //abrimos la conexión
+
+    if ($con==null){
+        echo "Error al conectar con la bd";
+        return null;
+    }
+    else{
+        $con->set_charset("utf8");
+        $resultado=$con->query($sql);
+        if ($resultado!=null){
+            $con->close();
+            return $resultado;
+        }
+        else{
+            echo "No se ha ejecutado la consulta";
+            $con->close();
+        }
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+
+// PERRERA BORRAR
+function borrarPerrera($id) {
+    $consulta = "delete from colaboradores where id_colaborador = '$id'";
+    $mensaje = null;
+    $con = conectar();
+    if ($con == null) {
+        return 0;
+    } else {
+        $resultado = $con->query($consulta);
+
+        if ($resultado) {
+            if ($con->affected_rows == 1)
+                return 1; // se borra
+            else
+                return -1; // no se borra
+        } else {
+            if ($con->errno == 1451) {
+                return -2;
+            }
+        }
+    }
+
+}

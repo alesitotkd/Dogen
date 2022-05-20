@@ -61,10 +61,11 @@ function infoMascotas(){
 function infoFiltroMascotas($a){
     // Almacenamos la consulta a ejecutar en una variable de tipo cadena.
 
-    $sql="select * from mascotas where id_mascota like '%$a%' or id_usuario like '%$a%' or mail_contacto 
-            like '%$a%' or telefono_contacto like '%$a%' or nombre like '%$a%' or edad like '%$a%' or raza like '%$a%' 
-                or sexo like '%$a%' or fecha_nacimiento like '%$a%' or vacunacion like '%$a%' or peso like '%$a%' or tamaño like '%$a%' 
-                  or direccion like '%$a%' or chip like '%$a%' or desparasitacion like '%$a%' or descripcion like '%$a%' or ruta_img like '%$a%'";
+    $sql="select * from mascotas where mail_contacto like '%$a%' or telefono_contacto like '%$a%' 
+              or nombre like '%$a%' or edad like '%$a%' or raza like '%$a%' 
+                or sexo like '%$a%' or fecha_nacimiento like '%$a%' or vacunacion like '%$a%' 
+                  or peso like '%$a%' or tamaño like '%$a%' or direccion like '%$a%' or chip like '%$a%' 
+                    or desparasitacion like '%$a%' or descripcion like '%$a%'";
     $con=conectar(); //abrimos la conexión
 
     if ($con==null){

@@ -35,10 +35,10 @@ if($total!==0){
             <img src="<?php echo $fila['RUTA_IMG']?>" class="card-img-top" alt="..." style="object-fit: contain; height: 250px">
             <div class="card-body" >
                 <h1 class="card-title" style="color: #240463"><?php echo $fila['NOMBRE']?></h1>
-                    <a href="https://wa.me/34<?php echo $fila['TELEFONO_CONTACTO'] ?>" target="_blank" style="float: right; margin-right: 20px">
+                    <a href="https://wa.me/34<?php echo $fila['TELEFONO_CONTACTO'] ?>" target="_blank" style="float: right; margin-right: 20px; margin-left: 10px">
                         <img src="./img/dogen/whatsapp.png" width="45px" height="45px">
                     </a>
-                    <a href="mailto:<?php echo $fila['MAIL_CONTACTO']?>" target="_blank" style="float: right; margin-right: 20px">
+                    <a href="mailto:<?php echo $fila['MAIL_CONTACTO']?>" target="_blank" style="float: right; margin-right: 20px; margin-left: 10px">
                         <img src="./img/dogen/correo.png" width="50px" height="50px">
                     </a>
                 <hr style="color: #269825; margin-top: 20px">

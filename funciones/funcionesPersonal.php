@@ -59,11 +59,10 @@ function infoCuidadores(){
 function infoFiltroCuidadores($a){
     // Almacenamos la consulta a ejecutar en una variable de tipo cadena.
 
-    $sql="select * from personal where id_personal like '%$a%' 
-        or id_usuario like '%$a%' or mail_contacto like '%$a%' or telefono_contacto 
+    $sql="select * from personal where mail_contacto like '%$a%' or telefono_contacto 
         like '%$a%' or nombre like '%$a%' or apellido1 like '%$a%' or apellido2 like '%$a%' 
         or direccion like '%$a%' or tarifa like '%$a%' or disponibilidad like '%$a%' 
-        or experiencia like '%$a%' or ruta_img like '%$a%' having tipo='Cuidador';";
+        or experiencia like '%$a%' having tipo='Cuidador';";
     $con=conectar(); //abrimos la conexión
 
     if ($con==null){
@@ -119,11 +118,10 @@ function infoAdiestradores(){
 function infoFiltroAdiestradores($a){
     // Almacenamos la consulta a ejecutar en una variable de tipo cadena.
 
-    $sql="select * from personal where id_personal like '%$a%' 
-        or id_usuario like '%$a%' or mail_contacto like '%$a%' or telefono_contacto 
+    $sql="select * from personal where mail_contacto like '%$a%' or telefono_contacto 
         like '%$a%' or nombre like '%$a%' or apellido1 like '%$a%' or apellido2 like '%$a%' 
         or direccion like '%$a%' or tarifa like '%$a%' or disponibilidad like '%$a%' 
-        or experiencia like '%$a%' or ruta_img like '%$a%' having tipo='Adiestrador';";
+        or experiencia like '%$a%' having tipo='Adiestrador';";
     $con=conectar(); //abrimos la conexión
 
     if ($con==null){

@@ -3,11 +3,11 @@ include "elementos/cabecera.php";
 ?>
 <div class="container">
     <hr>
-    <h5 class="card-title text-muted text-uppercase text-center">PROTECTORAS</h5>
+    <h5 class="card-title text-muted text-uppercase text-center">PERRERAS</h5>
     <br>
     <a href="tel:+123456789" onclick="alertaLlamada()" class="btn btn-primary text-uppercase"
        style="background-color: #240463; border: #240463; width: 100%;">Colaborar</a>
-    <form action="protectoras" method="post" style="margin-top: 20px">
+    <form action="perreras" method="post" style="margin-top: 20px">
         <div class="input-group" style="">
             <div class="form-outline"  style="width: 100%; margin: 10px">
                 <input type="text" name="filtro" class="form-control" placeholder="Filtrar..." />
@@ -21,7 +21,7 @@ include "elementos/cabecera.php";
         <?php
         include "funciones/funcionesColaboradores.php";
         if (isset($_POST['filtrar'])){
-            $resultado=infoFiltroProtectoras($_POST['filtro']);
+            $resultado=infoFiltroPerreras($_POST['filtro']);
             // Dibujar la tabla de resultados
             if ($resultado != null) {
                 echo '<div class="card-group">';
@@ -56,7 +56,7 @@ include "elementos/cabecera.php";
             }
 
         }else{
-            $resultado=infoProtectoras();
+            $resultado=infoPerreras();
             // Dibujar la tabla de resultados
             if ($resultado != null) {
 

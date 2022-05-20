@@ -87,7 +87,7 @@ include "elementos/cabecera.php";
                         <img src="./img/dogen/colaboradores.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
                             <h5 class="card-title mb-0">Colaboradores</h5>
-                            <div class="card-text text-black-50">Protectoras y asociaciones</div>
+                            <div class="card-text text-black-50">Protectoras y perreras</div>
                         </div>
                     </a>
                 </div>
@@ -150,7 +150,7 @@ include "elementos/cabecera.php";
                                 </li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Colabora con el proyecto</li>
                                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Anuncia tu protectora</li>
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Anuncia tu asociación</li>
+                                <li><span class="fa-li"><i class="fas fa-check"></i></span>Anuncia tu perrera</li>
                             </ul>
                             <div class="d-grid">
                                 <a href="tel:+123456789" class="btn btn-primary text-uppercase"

@@ -154,7 +154,7 @@
                                        aria-label="Toggle navigation">Colaboradores</a>
                                     <ul class="sub-menu collapse" id="submenu-1-1">
                                         <li class="nav-item"><a href="protectoras">Protectoras</a></li>
-                                        <li class="nav-item"><a href="asociaciones">Asociaciones</a></li>
+                                        <li class="nav-item"><a href="perreras">Perreras</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">

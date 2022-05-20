@@ -21,7 +21,7 @@ function alertaColaboradores(){
         html:
             '<h6>SELECCIONE EL APARTADO AL QUE DESEA ACCEDER</h6><br>' +
             '<a href="protectoras"><button class="btn btn-success">Protectoras</button></a>' +
-            '<a href="asociaciones"><button class="btn btn-success" style="margin-left: 5px">Asociaciones</button></a>',
+            '<a href="perreras"><button class="btn btn-success" style="margin-left: 5px">Perreras</button></a>',
         showConfirmButton: false,
         showCancelButton: true,
         cancelButtonText: 'Cancelar',
