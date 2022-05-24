@@ -29,10 +29,10 @@ if($total!==0){
 ?>
 <div class="container">
     <div class="card" style="margin: 10px">
-        <a href="adopcion?n=<?php echo $fila['ID_PERSONAL']?>" >
+        <a href="personal?n=<?php echo $fila['ID_PERSONAL']?>" >
             <img src="<?php echo $fila['RUTA_IMG']?>" class="card-img-top" alt="..." style="object-fit: contain; height: 250px">
             <div class="card-body" >
-                <h1 class="card-title" style="color: #240463; margin-top: 10px"><?php echo $fila['NOMBRE']?> <?php echo $fila['APELLIDO1']?><?php echo $fila['APELLIDO2']?></h1>
+                <h1 class="card-title" style="color: #240463; margin-top: 10px"><?php echo $fila['NOMBRE']?> <?php echo $fila['APELLIDO1']?> <?php echo $fila['APELLIDO2']?></h1>
                 <a href="https://wa.me/34<?php echo $fila['TELEFONO_CONTACTO'] ?>" target="_blank" style="float: right; margin-right: 20px; margin-left: 10px">
                     <img src="./img/dogen/whatsapp.png" width="45px" height="45px">
                 </a>

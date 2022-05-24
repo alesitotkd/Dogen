@@ -176,12 +176,12 @@ include "elementos/cabecera.php";
         <div class="col-md-2 col-md-offset-3" id="form_container" style="margin-top: 40px">
             <center>
                 <div class="col-md-6" style="margin-bottom: 20px">
-                    <a href="mailto:some@email.com" target="_blank">
+                    <a href="mailto:Dogen@gmail.com" target="_blank">
                         <img src="./img/dogen/correo.png" width="120px" height="120">
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="https://wa.me/637023488" target="_blank">
+                    <a href="https://wa.me/34637023488" target="_blank">
                         <img src="./img/dogen/whatsapp.png" width="120px" height="120px">
                     </a>
                 </div>

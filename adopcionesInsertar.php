@@ -216,16 +216,19 @@ include "elementos/cabecera.php";
             if (($_FILES["imagen"]["type"] == "image/gif")
                 || ($_FILES["imagen"]["type"] == "image/jpeg")
                 || ($_FILES["imagen"]["type"] == "image/jpg")
-                || ($_FILES["imagen"]["type"] == "image/png"))
+                || ($_FILES["imagen"]["type"] == "image/png")
+                || ($_FILES["imagen"]["type"] == "image/svg")
+                || ($_FILES["imagen"]["type"] == "image/tiff")
+                || ($_FILES["imagen"]["type"] == "image/heif")
+                || ($_FILES["imagen"]["type"] == "image/hevc"))
             {
                 $path = './img/mascotas/'.$_SESSION['id'];
                 if (!file_exists($path)) {
                     mkdir($path);
                 }
-                // Ruta donde se guardarán las imágenes que subamos
-                $directorio = $_SERVER['DOCUMENT_ROOT'].'/PROYECTO_FINAL/'.$path;
+
                 // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
-                move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.'/'.$nombre_img);
+                move_uploaded_file($_FILES['imagen']['tmp_name'],$path.'/'.$nombre_img);
                 $rutaImg= $path.'/'.$nombre_img;
             }
             else

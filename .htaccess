@@ -1,7 +1,10 @@
+#Guardar sesiones en hosting
+php_flag output_buffering on
+
 Options -Indexes
 
 <IfModule mod_rewrite.c>
-# Activar RewriteEngine
+#Activar RewriteEngine
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 
