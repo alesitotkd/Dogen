@@ -220,7 +220,8 @@ include "elementos/cabecera.php";
                 || ($_FILES["imagen"]["type"] == "image/svg")
                 || ($_FILES["imagen"]["type"] == "image/tiff")
                 || ($_FILES["imagen"]["type"] == "image/heif")
-                || ($_FILES["imagen"]["type"] == "image/hevc"))
+                || ($_FILES["imagen"]["type"] == "image/hevc")
+                || ($_FILES["imagen"]["type"] == "image/webp"))
             {
                 $path = './img/mascotas/'.$_SESSION['id'];
                 if (!file_exists($path)) {
