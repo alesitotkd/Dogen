@@ -34,7 +34,7 @@ function alertaLlamada(){
         title: '<strong>TELÉFONO</strong>',
         icon: 'info',
         html:
-            '<h3>+34 612345678</h3><br>',
+            '<h3>+34 637023488</h3><br>',
         showConfirmButton: true,
     })
 }
