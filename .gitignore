@@ -1,0 +1,36 @@
+# ignorar todos los archivos que terminen en .log y .txt
+*.log
+*.txt
+
+# ignorar los archivos con dichas extensiones de todas las carpetas de colaboradores/
+colaboradores/**/*.jpg
+colaboradores/**/*.jpeg
+colaboradores/**/*.png
+colaboradores/**/*.tiff
+colaboradores/**/*.svg
+colaboradores/**/*.heif
+colaboradores/**/*.hevc
+colaboradores/**/*.webp
+
+# ignorar los archivos con dichas extensiones de todas las carpetas de personal/
+personal/**/*.jpg
+personal/**/*.jpeg
+personal/**/*.png
+personal/**/*.tiff
+personal/**/*.svg
+personal/**/*.heif
+personal/**/*.hevc
+personal/**/*.webp
+
+# ignorar los archivos con dichas extensiones de todas las carpetas de mascotas/
+mascotas/**/*.jpg
+mascotas/**/*.jpeg
+mascotas/**/*.png
+mascotas/**/*.tiff
+mascotas/**/*.svg
+mascotas/**/*.heif
+mascotas/**/*.hevc
+mascotas/**/*.webp
+
+
+
