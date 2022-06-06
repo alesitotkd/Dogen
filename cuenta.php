@@ -626,8 +626,14 @@ include "elementos/cabecera.php";
                         <!----------------------------------- CONTRA USUARIO END ------------------------------------->
                         <br><hr><br>
                     </div>
-                </div>
+                </div> <br><br>
             </div>
+            <hr>
+            <iframe  width="100%" height="350px" frameborder="0" scrolling="no" marginheight="0"
+                     marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;
+                    hl=es&amp;q=Talavera%20de%20la%20reina%2C%20avenida%20salvador%20allende+(DOGEN)&amp;
+                    t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
         </div>
     </div>
 </div>

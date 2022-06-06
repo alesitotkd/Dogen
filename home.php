@@ -169,7 +169,7 @@ include "elementos/cabecera.php";
         <div class="col-md-10 col-md-offset-3" id="form_container">
             <iframe  width="100%" height="350px" frameborder="0" scrolling="no" marginheight="0"
                      marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;
-                    hl=es&amp;q=Talavera%20de%20la%20Reina+(Mi%20nombre%20de%20egocios)&amp;
+                    hl=es&amp;q=Talavera%20de%20la%20reina%2C%20avenida%20salvador%20allende+(DOGEN)&amp;
                     t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
             </iframe>
         </div>
