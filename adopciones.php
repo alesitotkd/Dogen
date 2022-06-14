@@ -41,7 +41,6 @@ include "elementos/cabecera.php";
                                 <div class="card-body" >
                                     <h3 class="card-title"><?php echo $fila['NOMBRE']?></h3>
                                     <h5 class="card-title"><?php echo $fila['RAZA']?></h5>
-                                    <p class="card-text" style="color: black"><?php echo $fila['DESCRIPCION']?></p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Peso: <?php echo $fila['PESO'] ?>Kg</small><br>
@@ -81,7 +80,6 @@ include "elementos/cabecera.php";
                             <h3 class="card-title" style="color: #240463"><?php echo $fila['NOMBRE']?></h3>
                             <hr style="color: #269825">
                             <h5 class="card-title"><?php echo $fila['RAZA']?></h5>
-                            <p class="card-text" style="color: black"><?php echo $fila['DESCRIPCION']?></p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">Peso - <?php echo $fila['PESO'] ?>Kg</small><br>

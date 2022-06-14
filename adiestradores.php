@@ -38,7 +38,6 @@ include "elementos/cabecera.php";
                                     <h3 class="card-title" style="color: #240463"><?php echo $fila['NOMBRE']?></h3>
                                     <hr style="color: #269825">
                                     <h5 class="card-title"><?php echo $fila['DISPONIBILIDAD']?></h5>
-                                    <p class="card-text" style="color: black"><?php echo $fila['EXPERIENCIA']?></p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Tarifa - <?php echo $fila['TARIFA']?> €/Hora</small><br>
@@ -74,7 +73,6 @@ include "elementos/cabecera.php";
                                     <h3 class="card-title" style="color: #240463"><?php echo $fila['NOMBRE']?></h3>
                                     <hr style="color: #269825">
                                     <h5 class="card-title"><?php echo $fila['DISPONIBILIDAD']?></h5>
-                                    <p class="card-text" style="color: black"><?php echo $fila['EXPERIENCIA']?></p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">Tarifa - <?php echo $fila['TARIFA']?> €/Hora</small><br>
